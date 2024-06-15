@@ -156,14 +156,6 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
  Once successful use username and password to login to the admin page and proceed with website configuraions
  ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3603e77c-b210-466a-9c76-8bcd39d980e2)
 
-you should be able to see the website welcome page 
-![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/585bf077-8df8-4c7e-9511-b714ded03a8a)
-You will realised it has failed to launch. do not worry. go back to your terminal  and cd to /var/www/html/wordpress. create a config file (wp-config.php).copy and paste the code from the browser. safe file and 
-and 
- the issue should be resolved . refresh page and you should see the website welcome page working  
- pic below:
-![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/6b8a1fe0-b637-4e8b-ae62-304a80b7c0f7)
-
 
 
 ### 11. Configure Domain Name
