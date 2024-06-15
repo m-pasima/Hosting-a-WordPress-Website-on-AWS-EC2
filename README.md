@@ -15,22 +15,19 @@ This guide provides detailed instructions for hosting a WordPress website on an 
 1. **Sign in to AWS Management Console.**
 2. **Navigate to the EC2 Dashboard** and click on "Launch Instance."
    - Pic below:
- ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/1f60dbc9-a1cf-4d31-9bc3-eb5207efca1c)
-
+   ![EC2 Dashboard](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/1f60dbc9-a1cf-4d31-9bc3-eb5207efca1c)
 
 3. **Choose an Amazon Machine Image (AMI).** Select an Ubuntu Server AMI.
 4. **Select an instance type** (e.g., t2.micro for free tier).
 5. **Configure instance details, storage, and tags** (use default settings).
 6. **Configure security group** to allow HTTP (port 80) and HTTPS (port 443) traffic.
    - Pic below:
-![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/40896180-af68-4567-a56e-81cef4892298)
-
+   ![Security Group Settings](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/40896180-af68-4567-a56e-81cef4892298)
 
 7. **Review and launch the instance.**
 8. **Create and download a new key pair** (.pem file). Save this key pair securely as it will be used to connect to your instance.
    - Pic below:
-  ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/6e785084-d0e0-4406-a380-eb97116ad3b1)
-
+   ![Key Pair](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/6e785084-d0e0-4406-a380-eb97116ad3b1)
 
 ### 2. Allocate an Elastic IP
 Allocating an Elastic IP ensures your server retains the same IP address even if it's restarted.
@@ -38,8 +35,7 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
 1. **Navigate to the "Elastic IPs"** section in the EC2 Dashboard.
 2. **Allocate a new Elastic IP** and associate it with your EC2 instance.
    - Pic below:
-![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3be981ab-7fbc-41d8-b6fa-98cb12be6189)
-)
+   ![Elastic IP Allocation](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3be981ab-7fbc-41d8-b6fa-98cb12be6189)
 
 ### 3. Connect to Your EC2 Instance via SSH
 
@@ -50,8 +46,7 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
 5. **Under "Advanced SSH settings," upload your .pem key.**
 6. **Click "OK"** to connect.
    - Pic below:
-   ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/b60ab635-6d64-4b45-a896-fe5997d8472f)
-
+   ![Mobaxterm SSH Settings](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/b60ab635-6d64-4b45-a896-fe5997d8472f)
 
 ### 4. Install Apache Web Server
 
@@ -65,8 +60,7 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
    ```
 3. **Verify the installation** by entering your Elastic IP in a browser. You should see the Apache2 default page.
    - Pic below:
-  ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/1fdc5c31-6666-4cb1-bc1e-0056eade4403)
-
+   ![Apache Default Page](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/1fdc5c31-6666-4cb1-bc1e-0056eade4403)
 
 ### 5. Install PHP and MySQL
 
@@ -137,7 +131,6 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
 ### 9. Restart Apache
 
 1. **Restart Apache to apply the changes:**
-2. 
    ```sh
    sudo systemctl restart apache2
    ```
@@ -146,17 +139,15 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
 
 1. **Open your browser** and navigate to your Elastic IP. You should see the WordPress installation page.
    - Pic below:
- ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/cc191581-030f-447c-ab53-751e18e24e4e)
+   ![WordPress Installation](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/cc191581-030f-447c-ab53-751e18e24e4e)
 
-   
 2. **Follow the on-screen instructions** to configure WordPress with the database details (`wp_user`, `wp`, `YourStrongPassword`).
+   - Pic below:
+   ![WordPress Configuration](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3f468c2b-e445-492a-a251-1e1174d036bf)
 
- ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3f468c2b-e445-492a-a251-1e1174d036bf) 
- 
- Once successful use username and password to login to the admin page and proceed with website configuraions
- ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3603e77c-b210-466a-9c76-8bcd39d980e2)
-
-
+3. **Once successful, use the username and password** to log in to the admin page and proceed with website configurations.
+   - Pic below:
+   ![WordPress Admin](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/3603e77c-b210-466a-9c76-8bcd39d980e2)
 
 ### 11. Configure Domain Name
 
@@ -164,12 +155,14 @@ Allocating an Elastic IP ensures your server retains the same IP address even if
 2. **Create a hosted zone** for your domain.
 3. **Add an A record** with your Elastic IP.
    - Pic below:
- ![image](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/b2575baa-15a5-4522-be49-3deafea840ce)
+   ![Route 53 A Record](https://github.com/m-pasima/Hosting-a-WordPress-Website-on-AWS-EC2/assets/170426323/b2575baa-15a5-4522-be49-3deafea840ce)
 
-back on the terminal, vi /etc/apache2/sites-available/000-default.conf
-and modify file with the ServerName demo.example.com
-                         ServerAlias www.example.com.com
- 
+4. **Back on the terminal**, edit `/etc/apache2/sites-available/000-default.conf` and modify the file with:
+   ```apache
+   ServerName demo.example.com
+   ServerAlias www.example.com
+   ```
+
 ### 12. Enable SSL with Certbot
 
 1. **Install Certbot:**
